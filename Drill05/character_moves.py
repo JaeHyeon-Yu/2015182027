@@ -15,22 +15,24 @@ def Move_Animation(frame_y) :
     character.clip_draw(frame_x * 100, frame_y, 100, 100, x, y)
     update_canvas()
     frame_x = (frame_x + 1) % 8
-    delay(0.02)
+    delay(0.01)
     get_events()
 
 def Move_Right(xpos, ypos):
-    global x, y, frame_x
+    global x, y
     slope = (ypos-y)/(xpos-x)
     xp, yp = x, y
+
     while (x <= xpos):
         Move_Animation(100)
-        y = slope * (x-xp) + yp
-        x+=1
+        y = slope * (x - xp) + yp
+        x += 1
 
 def Move_Left(xpos, ypos):
-    global x, y, frame_x
+    global x, y
     slope = (ypos - y) / (xpos - x)
     xp, yp = x, y
+
     while (x >= xpos):
         Move_Animation(0)
         y = slope * (x - xp) + yp
