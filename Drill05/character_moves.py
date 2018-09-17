@@ -5,35 +5,20 @@ open_canvas()
 grass = load_image('grass.png')
 character = load_image('animation_sheet.png')
 
-x, y = 0+25, 90
-frame_x, frame_y = 0, 100
-move = 5
+x, y=0+25, 90
 
-def Move_Right(x, frame_x, xpos):
-    while (x < xpos):
-        clear_canvas()
-        grass.draw(400, 30)
-        character.clip_draw(frame_x * 100, frame_y, 100, 100, x, y)
-        update_canvas()
-        frame_x = (frame_x + 1) % 8
-        x = x + move
-        delay(0.01)
-        get_events()
-def Move_Up(y, frame_x,xpos, ypos):
-    x=xpos
-    while (y < ypos):
-        clear_canvas()
-        grass.draw(400, 30)
-        character.clip_draw(frame_x * 100, frame_y, 100, 100, x, y)
-        update_canvas()
-        frame_x = (frame_x + 1) % 8
-        y = y + move
-        delay(0.01)
-        get_events()
+def Move_Right():
+    pass
+
+def Move_Left():
+    pass
+
 
 def Move_to_Position(xpos, ypos):
-       Move_Right(x, frame_x, xpos)
-       Move_Up(y, frame_x,xpos, ypos)
+     if (x < xpos):
+         Move_Right()
+     else :
+         Move_Left()
 
 while True:
     Move_to_Position(203, 535)
