@@ -63,7 +63,7 @@ def make_circle():
     cx, cy, r = 800 // 2, 600 // 2, (600-100)//2
     degree = -90
 
-    while degree<270:
+    while degree < 270:
         radian = math.radians(degree)
         x = cx + r*math.cos(radian)
         y = cy + r*math.sin(radian)
@@ -74,7 +74,7 @@ def make_circle():
         delay(0.01)
 
 while True:
-   # make_rectangle()
+    make_rectangle()
     make_circle()
 
 
