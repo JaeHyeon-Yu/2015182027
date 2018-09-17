@@ -5,7 +5,7 @@ open_canvas()
 grass = load_image('grass.png')
 character = load_image('animation_sheet.png')
 
-x, y=0+25, 90
+x, y = 0+25, 90
 frame_x = 0
 
 def Move_Animation(frame_y) :
@@ -32,7 +32,7 @@ def Move_Left(xpos, ypos):
     slope = (ypos - y) / (xpos - x)
     xp, yp = x, y
     while (x >= xpos):
-        Move_Animation(200)
+        Move_Animation(0)
         y = slope * (x - xp) + yp
         x -= 1
 
@@ -54,6 +54,5 @@ while True:
     Move_to_Position(692, 518)
     Move_to_Position(682, 336)
     Move_to_Position(712, 349)
-
 
 close_canvas()
