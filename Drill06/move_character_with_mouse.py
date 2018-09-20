@@ -22,7 +22,15 @@ def Move_Right(xpos, ypos):
 
 
 def Move_Left(xpos, ypos):
-    pass
+    global x, y
+    global frame_x
+    slope = (ypos - y) / (xpos - x)
+    xp, yp = x, y
+
+    while (x >= xpos):
+        y = slope * (x - xp) + yp
+        x -= 1
+        Move_Animation()
 
 def Move_to_Position(xpos, ypos):
     global x, y
