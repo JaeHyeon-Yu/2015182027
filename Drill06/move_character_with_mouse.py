@@ -2,8 +2,24 @@ from pico2d import *
 
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
+def Move_Animation():
+    global x, y
+    global frame_x
+    character.clip_draw(frame_x * 100, 100 * 1, 100, 100, x, y)
+    update_canvas()
+    frame_x = (frame_x + 1) % 8
+
 def Move_Right(xpos, ypos):
-    pass
+    global x, y
+    global frame_x
+    slope = (ypos - y) / (xpos - x)
+    xp, yp = x, y
+
+    while (x <= xpos):
+        y = slope * (x - xp) + yp
+        x += 1
+        Move_Animation()
+
 
 def Move_Left(xpos, ypos):
     pass
@@ -12,7 +28,7 @@ def Move_to_Position(xpos, ypos):
     global x, y
     if (xpos > x) :
         Move_Right(xpos, ypos)
-    elif
+    else:
         Move_Left(xpos, ypos)
 
 def handle_events():
@@ -45,10 +61,10 @@ while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     mouse.clip_draw(0, 0, 100, 100, mouse_x, mouse_y)
-    character.clip_draw(frame_x * 100, 100 * 1, 100, 100, x, 90)
+    Move_Animation()
     update_canvas()
-    frame_x = (frame_x + 1) % 8
-    delay(0.02)
+    if(running):
+        delay(0.02)
     handle_events()
 
 close_canvas()
