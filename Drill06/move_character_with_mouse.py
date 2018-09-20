@@ -2,6 +2,18 @@ from pico2d import *
 
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
+def Move_Right(xpos, ypos):
+    pass
+
+def Move_Left(xpos, ypos):
+    pass
+
+def Move_to_Position(xpos, ypos):
+    global x, y
+    if (xpos > x) :
+        Move_Right(xpos, ypos)
+    elif
+        Move_Left(xpos, ypos)
 
 def handle_events():
     global running
@@ -15,7 +27,8 @@ def handle_events():
             mouse_x, mouse_y = event.x, KPU_HEIGHT -1 -event.y
         elif event.type == SDL_KEYDOWN and event.key ==SDLK_ESCAPE:
             running=False
-
+        elif event.type == SDL_MOUSEBUTTONDOWN:
+            Move_to_Position(event.x, KPU_HEIGHT -1 -event.y)
 
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
 kpu_ground = load_image('KPU_GROUND.png')
