@@ -12,14 +12,14 @@ def Move_Animation():
 def Move_Right(xpos, ypos):
     global x, y
     global frame_x
+    ypos +=45
     slope = (ypos - y) / (xpos - x)
     xp, yp = x, y
 
-    while (x <= xpos):
+    while (x <= xpos -40 ):
         y = slope * (x - xp) + yp
         x += 1
         Move_Animation()
-
 
 def Move_Left(xpos, ypos):
     global x, y
@@ -34,6 +34,8 @@ def Move_Left(xpos, ypos):
 
 def Move_to_Position(xpos, ypos):
     global x, y
+    global running
+    running= True
     if (xpos > x) :
         Move_Right(xpos, ypos)
     else:
@@ -59,20 +61,21 @@ kpu_ground = load_image('KPU_GROUND.png')
 character = load_image('animation_sheet.png')
 mouse = load_image('hand_arrow.png')
 
-running = True
+running = False
 mouse_x, mouse_y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 frame_x = 0
 hide_cursor()
 
-while running:
+while True:
+
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     mouse.clip_draw(0, 0, 100, 100, mouse_x, mouse_y)
     Move_Animation()
     update_canvas()
-    if(running):
-        delay(0.02)
+    if(running== False):
+        delay(0.05)
     handle_events()
 
 close_canvas()
