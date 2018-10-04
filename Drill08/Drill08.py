@@ -48,7 +48,10 @@ def draw_point(p):
 
 
 def draw_curve_circle(points):
-    pass
+    draw_big_point(points[0])
+    draw_big_point(points[1])
+    draw_big_point(points[2])
+    draw_big_point(points[3])
 
 points=[(-300, 200), (400, 350), (300, -300), (-200, -200)]
 
