@@ -4,8 +4,10 @@ class Card:
     pass
 
 class Player:
-    pass
-
+    def __init__(self):
+        self.x, self.y
+        self.frame_x, self.frame_y
+        self.image=load_image('zeroxsheet.png')
 class Monster:
     pass
 
