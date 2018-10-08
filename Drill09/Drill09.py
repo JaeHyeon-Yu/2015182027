@@ -28,14 +28,13 @@ class Ball:
         if self.size == 1:
             self.image=load_image('ball21x21.png')
         else:
-            self.image=load_image('ball41x24')
+            self.image=load_image('ball41x41.png')
 
     def update(self):
         self.y -= 5
 
     def draw(self):
         self.image.clip_draw(0, 0, 100, 100, self.x, self.y)
-
 
 
 def handle_events():
@@ -55,3 +54,20 @@ grass = Grass()
 balls = [Ball() for i in range(20)]
 
 running = True
+
+
+while running:
+    handle_events()
+
+    for boy in team:
+        boy.update()
+
+    clear_canvas()
+    grass.draw()
+    for boy in team:
+        boy.draw()
+    update_canvas()
+
+    delay(0.05)
+
+close_canvas()
