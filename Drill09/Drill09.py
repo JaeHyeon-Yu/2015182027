@@ -34,7 +34,10 @@ class Ball:
         self.y -= 5
 
     def draw(self):
-        self.image.clip_draw(0, 0, 100, 100, self.x, self.y)
+        if self.size == 1:
+            self.image.clip_draw(0, 0, 21, 21, self.x, self.y)
+        else:
+            self.image.clip_draw(0, 0, 41, 41, self.x, self.y)
 
 
 def handle_events():
@@ -61,11 +64,16 @@ while running:
 
     for boy in team:
         boy.update()
+    for ball in balls:
+        ball.update()
 
     clear_canvas()
     grass.draw()
     for boy in team:
         boy.draw()
+    for ball in balls:
+        ball.draw()
+
     update_canvas()
 
     delay(0.05)
