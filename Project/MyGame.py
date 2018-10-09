@@ -1,8 +1,9 @@
 from pico2d import *
 
 class Card:
-    pass
-
+    def __init__(self):
+        self.selct = False
+        self.useful = True
 class Player:
     def __init__(self):
         self.x, self.y
