@@ -15,4 +15,6 @@ class Monster:
         self.frame_x, self.frame_y
 
 class Background:
-    pass
+    def __init__(self):
+        self.image1=load_image('map1.jpg')
+        self.image2=load_image('map2.png')
