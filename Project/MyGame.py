@@ -18,3 +18,4 @@ class Background:
     def __init__(self):
         self.image1=load_image('map1.jpg')
         self.image2=load_image('map2.png')
+        self.data[6][4]
