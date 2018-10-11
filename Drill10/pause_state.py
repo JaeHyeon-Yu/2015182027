@@ -5,6 +5,7 @@ import main_state
 name= "PauseState"
 image= None
 pause_dir = True
+count=0
 
 def enter():
     global image
@@ -20,7 +21,8 @@ def draw():
     main_state.grass.draw()
     main_state.boy.draw()
     #update_canvas()
-    image.clip_draw(200, 200, 500, 500, 400, 350)
+    if count%2==0:
+        image.clip_draw(200, 200, 500, 500, 400, 350)
     update_canvas()
 
 def handle_events():
@@ -31,7 +33,9 @@ def handle_events():
 
 
 def update():
-    pass
+    global count
+    count += 1
+    delay(0.2)
 
 def pause():
     pass
