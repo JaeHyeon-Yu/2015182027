@@ -15,9 +15,12 @@ def exit():
     del(image)
 
 def draw():
-    global image
+    global image, count
     clear_canvas()
-    image.draw(400, 300)
+    main_state.grass.draw()
+    main_state.boy.draw()
+    #update_canvas()
+    image.clip_draw(200, 200, 500, 500, 400, 350)
     update_canvas()
 
 def handle_events():
@@ -29,7 +32,6 @@ def handle_events():
 
 def update():
     pass
-
 
 def pause():
     pass
