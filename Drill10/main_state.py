@@ -17,7 +17,6 @@ grass = None
 font = None
 
 
-
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
@@ -32,15 +31,15 @@ class Boy:
         self.x, self.y = 0, 90
         self.frame = 0
         self.image = load_image('run_animation.png')
-        self.dir = 1
+        self.dir = 0.2
 
     def update(self):
         self.frame = (self.frame + 1) % 8
         self.x += self.dir
         if self.x >= 800:
-            self.dir = -1
+            self.dir = -0.2
         elif self.x <= 0:
-            self.dir = 1
+            self.dir = 0.2
 
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
@@ -74,7 +73,7 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key==SDLK_ESCAPE:
             game_framework.change_state(title_state)
         elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
-            game_framework.change_state(pause_state)
+            game_framework.push_state(pause_state)
 
 
 def update():
