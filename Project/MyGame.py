@@ -1,5 +1,6 @@
 from pico2d import *
 import game_framework
+import title_state
 
 class Card:
     def __init__(self):
