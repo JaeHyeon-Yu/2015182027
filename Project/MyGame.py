@@ -1,4 +1,5 @@
 from pico2d import *
+import game_framework
 
 class Card:
     def __init__(self):
@@ -9,7 +10,7 @@ class Player:
     def __init__(self):
         self.x, self.y
         self.frame_x, self.frame_y
-        self.image=load_image('zeroxsheet.png')
+        self.image
 class Monster:
     def __init__(self):
         self.x, self.y
@@ -19,9 +20,9 @@ class Monster:
 
 class Background:
     def __init__(self):
-        self.image1=load_image('map1.jpg')
-        self.image2=load_image('map2.png')
+        self.image1
+        self.image2
         self.data[6][4]
 
-card=[Card() for i in range(10)]
 
+open_canvas()
