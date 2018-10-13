@@ -9,7 +9,8 @@ def enter():
     pass
 
 def exit():
-    pass
+    global image
+    del(image)
 
 def handle_events():
     pass
