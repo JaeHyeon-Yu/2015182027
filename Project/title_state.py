@@ -13,7 +13,13 @@ def exit():
     del(image)
 
 def handle_events():
-    pass
+    events = get_events()
+    for event in events:
+        if event.type == SDL_QUIT:
+            game_framework.quit()
+        else:
+            if event.type==SDL_KEYDOWN and event.key==SDLK_ESCAPE:
+                game_framework.quit()
 
 def draw():
     pass
