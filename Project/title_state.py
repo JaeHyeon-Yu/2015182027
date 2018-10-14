@@ -6,7 +6,7 @@ name= "TitleState"
 image= None
 
 def enter():
-    pass
+    image=load_image('title(beta).png')
 
 def exit():
     global image
