@@ -1,6 +1,6 @@
 from pico2d import *
 import game_framework
-import main_state
+import title_state
 
 name= "StartState"
 image= None
@@ -21,6 +21,8 @@ def handle_events():
         else:
             if event.type==SDL_KEYDOWN and event.key==SDLK_ESCAPE:
                 game_framework.quit()
+            elif event.type==SDL_KEYDOWN and event.key==SDLK_SPACE:
+                game_framework.change_state(title_state)
 
 def draw():
     global image
