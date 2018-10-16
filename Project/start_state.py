@@ -2,11 +2,12 @@ from pico2d import *
 import game_framework
 import main_state
 
-name= "TitleState"
+name= "StartState"
 image= None
 
 def enter():
-    image=load_image('title(beta).png')
+    global image
+    image = load_image('sprites/title_beta.png')
 
 def exit():
     global image
@@ -22,7 +23,10 @@ def handle_events():
                 game_framework.quit()
 
 def draw():
-    pass
+    global image
+    clear_canvas()
+    image.draw(400, 300)
+    update_canvas()
 
 def update():
     pass
