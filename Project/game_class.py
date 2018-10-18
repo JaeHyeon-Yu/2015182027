@@ -4,7 +4,7 @@ class Card:
     def __init__(self):
         self.selct = False
         self.useful = True
-        self.image
+        self.image = None
 class Player:
     def __init__(self):
         self.x, self.y
