@@ -5,6 +5,7 @@ import game_class
 
 name= "TitleState"
 image= None
+card_stack = 0  # 턴 시작전 사용할 카드 선정!
 
 
 def enter():
@@ -12,7 +13,8 @@ def enter():
     image = load_image('sprites/cardselect.png')
 
 def exit():
-    pass
+    global image
+    del (image)
 
 def handle_events():
     events = get_events()
