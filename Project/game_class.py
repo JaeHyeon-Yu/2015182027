@@ -1,4 +1,6 @@
 from pico2d import *
+import card_class
+
 
 class Player:
     def __init__(self):
