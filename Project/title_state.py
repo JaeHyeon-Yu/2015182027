@@ -8,7 +8,6 @@ image= None
 card_stack = 0  # 턴 시작전 사용할 카드 선정!
 
 
-
 def enter():
     global image
     image = load_image('sprites/cardselect.png')
