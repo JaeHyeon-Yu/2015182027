@@ -7,9 +7,6 @@ name= "TitleState"
 image= None
 card_stack = 0  # 턴 시작전 사용할 카드 선정!
 
-cards = [game_class.card_class.Card() for card in range(10)]
-
-
 
 
 def enter():
