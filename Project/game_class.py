@@ -1,5 +1,5 @@
 from pico2d import *
-import card_class
+from card_class import *
 
 
 class Player:
