@@ -5,3 +5,4 @@ class Card:
         self.selct = False
         self.useful = True
         self.image = None
+
