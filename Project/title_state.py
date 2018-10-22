@@ -5,28 +5,27 @@ import game_class
 
 name= "TitleState"
 image= None
-card_stack = [None for i in range(5)]  # 턴 시작전 사용할 카드 선정!
+card_stack = [game_class.Card() for i in range(5)]  # 턴 시작전 사용할 카드 선정!
 stack = 0
-deck = [None for i in range(10)]
 
+deck = [game_class.Card() for card in range(10)]
 
 def enter():
     global image
     global deck
     image = load_image('sprites/cardselect.png')
-
-    deck[0] = game_class.Card001()
-    deck[1] = game_class.Card002()
-    deck[2] = game_class.Card003()
-    deck[3] = game_class.Card004()
-    deck[4] = game_class.Card005()
-    deck[5] = game_class.Card006()
-    deck[6] = game_class.Card007()
-    deck[7] = game_class.Card008()
-    deck[8] = game_class.Card009()
-    deck[9] = game_class.Card010()
-
-
+    
+    deck[0].Initialize(load_image('sprites/card/001.png'), 170 + 114 * 0, 480)
+    deck[1].Initialize(load_image('sprites/card/002.png'), 170 + 114 * 1, 480)
+    deck[2].Initialize(load_image('sprites/card/003.png'), 170 + 114 * 2, 480)
+    deck[3].Initialize(load_image('sprites/card/004.png'), 170 + 114 * 3, 480)
+    deck[4].Initialize(load_image('sprites/card/005.png'), 170 + 114 * 4, 480)
+    deck[5].Initialize(load_image('sprites/card/006.png'), 170 + 114 * 0, 320)
+    deck[6].Initialize(load_image('sprites/card/007.png'), 170 + 114 * 1, 320)
+    deck[7].Initialize(load_image('sprites/card/008.png'), 170 + 114 * 2, 320)
+    deck[8].Initialize(load_image('sprites/card/009.png'), 170 + 114 * 3, 320)
+    deck[9].Initialize(load_image('sprites/card/010.png'), 170 + 114 * 4, 320)
+    # 이미지, 타이틀에서 좌표
 
 def exit():
     global image
@@ -47,30 +46,31 @@ def handle_events():
             elif event.type == SDL_MOUSEBUTTONDOWN:
                 x, y = event.x, 600-1-event.y
 
-                i = 0
-                while i < 10 :
-                    if (deck[i].Click(x, y) == True) and (stack < 5) :
-                        card_stack[stack] = deck[i]
+                for card in deck:
+                    if (card.Click(x, y) == True) and (stack < 5):
+                        card_stack[stack].Initialize(card.image, 170 + 114*stack, 100)
                         stack += 1
-                    i += 1
-
-
-
-
+                for card in card_stack:
+                    if (card.Click(x,y)== True):
+                        pass
+                        #stack -= 1
 
 def draw():
     global image
     global stack
     global deck
+    global select
 
 
     clear_canvas()
     image.draw(400, 300)
 
-    i=0
-    while i<10:
-        deck[i].draw()
-        i += 1
+    for card in deck:
+        card.draw()
+
+    for card in card_stack:
+        if card.image != None:
+            card.draw()
 
     update_canvas()
 
