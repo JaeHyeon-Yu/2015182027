@@ -7,10 +7,25 @@ name= "TitleState"
 image= None
 card_stack = 0  # 턴 시작전 사용할 카드 선정!
 
+#card001=game_class.card_class.Card001()
+deck=[game_class.card_class.Card() for i in range(10)]
+
 
 def enter():
     global image
     image = load_image('sprites/cardselect.png')
+    
+    deck[0] = load_image('sprites/card/001.png')
+    deck[1] = load_image('sprites/card/002.png')
+    deck[2] = load_image('sprites/card/003.png')
+    deck[3] = load_image('sprites/card/004.png')
+    deck[4] = load_image('sprites/card/005.png')
+    deck[5] = load_image('sprites/card/006.png')
+    deck[6] = load_image('sprites/card/007.png')
+    deck[7] = load_image('sprites/card/008.png')
+    deck[8] = load_image('sprites/card/009.png')
+    deck[9] = load_image('sprites/card/010.png')
+
 
 def exit():
     global image
