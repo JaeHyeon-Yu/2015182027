@@ -6,7 +6,9 @@ class Player:
     def __init__(self):
         self.x, self.y
         self.frame_x, self.frame_y
-        self.image= load_image('zeroxsheet.gif')
+        self.image = None
+    def Initialize(self):
+        pass
 class Monster:
     def __init__(self):
         self.x, self.y
@@ -16,6 +18,5 @@ class Monster:
 
 class Background:
     def __init__(self):
-        self.image1
-        self.image2
-        self.data[6][4]
+        self.image = None
+        self.data[4][3]

@@ -43,6 +43,10 @@ def handle_events():
         else:
             if event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
                 game_framework.quit()
+
+            elif event.type ==SDL_KEYDOWN and event.key==SDLK_SPACE and stack==5:
+                game_framework.push_state(main_state)
+
             elif event.type == SDL_MOUSEBUTTONDOWN:
                 x, y = event.x, 600-1-event.y
 

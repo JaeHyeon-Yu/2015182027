@@ -4,9 +4,12 @@ import start_state
 import game_class
 
 name= 'MainState'
+#hero = game_class.Player()
+image = None
 
 def enter():
-    pass
+    global image
+    image = load_image('sprites/map1.jpg')
 
 def exit():
     pass
@@ -18,7 +21,9 @@ def handle_events():
             game_framework.quit()
 
 def draw():
-    pass
+    clear_canvas()
+    image.draw(400, 300)
+    update_canvas()
 
 def update():
     pass
