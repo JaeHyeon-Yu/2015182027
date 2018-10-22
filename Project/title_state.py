@@ -48,12 +48,20 @@ def handle_events():
 
                 for card in deck:
                     if (card.Click(x, y) == True) and (stack < 5):
-                        card_stack[stack].Initialize(card.image, 170 + 114*stack, 100)
-                        stack += 1
+                        i = 0
+                        for cs in card_stack:
+                            if cs.Check() == True:
+                                cs.Initialize(card.image, 170 + 114* i, 100)
+                                stack += 1
+                                break
+                            i += 1
+                            # 앞부터 비어있는공간 찾는다
+
                 for card in card_stack:
                     if (card.Click(x,y)== True):
-                        pass
-                        #stack -= 1
+                        card.delete()
+                        stack -= 1
+
 
 def draw():
     global image

@@ -2,11 +2,9 @@ from pico2d import *
 
 class Card:
     def __init__(self):
-        self.selct = False
-        self.useful = True
         self.image = None
-        self.tx, self.ty = 100, 100
-        self.sx, self.sy = 120,  100
+        self.tx, self.ty = 0, 0
+        self.sx, self.sy = 0,  0
 
     def Initialize(self, image, tx, ty):
         self.image = image
@@ -22,5 +20,12 @@ class Card:
         else:
             return False
 
+    def Check(self):
+        if self.image == None:
+            return True
+        else:
+            return False
+
     def delete(self):
+        self.image = None
         pass
