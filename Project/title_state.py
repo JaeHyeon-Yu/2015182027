@@ -5,8 +5,8 @@ import game_class
 
 name= "TitleState"
 image= None
-card_stack = None  # 턴 시작전 사용할 카드 선정!
-
+card_stack = [None for i in range(5)]  # 턴 시작전 사용할 카드 선정!
+stack = 0
 deck = [None for i in range(10)]
 
 
@@ -34,6 +34,7 @@ def exit():
 
 def handle_events():
     global stack
+    global card_stack
     global deck
 
     events = get_events()
@@ -47,9 +48,10 @@ def handle_events():
                 x, y = event.x, 600-1-event.y
 
                 i = 0
-                while i<10 :
-                    if deck[0].Click(x, y):
-                        pass
+                while i < 10 :
+                    if (deck[i].Click(x, y) == True) and (stack < 5) :
+                        card_stack[stack] = deck[i]
+                        stack += 1
                     i += 1
 
 
