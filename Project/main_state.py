@@ -33,7 +33,7 @@ def draw():
     for card in title_state.card_stack:
         card.draw()
     update_canvas()
-    delay(0.1)
+    delay(0.2)
 
 def update():
     hero.update()

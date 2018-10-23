@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/zeroxsheet.gif" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/zeroxsheet.gif" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,120 +17,82 @@
     <session id="-1854733908">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="10" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="7610" />
+          <entry key="py" value="7975" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="7610" />
+          <entry key="Python" value="7975" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gif" value="2" />
           <entry key="jpg" value="1" />
-          <entry key="png" value="3" />
-          <entry key="py" value="16" />
+          <entry key="png" value="4" />
+          <entry key="py" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="6" />
-          <entry key="Python" value="16" />
+          <entry key="Image" value="7" />
+          <entry key="Python" value="17" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/title_state.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-                <marker date="1540228541736" expanded="true" signature="2399:2663" ph="..." />
-                <marker date="1540228541736" expanded="true" signature="2676:2687" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            <state relative-caret-position="475">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1540231135549" expanded="true" signature="221:230" ph="..." />
-                <marker date="1540231135549" expanded="true" signature="777:810" ph="..." />
+                <marker date="1540301506400" expanded="true" signature="358:367" ph="..." />
+                <marker date="1540301506400" expanded="true" signature="1058:1091" ph="..." />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sprites/grunt1.gif">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sprites/map1.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files/Python37/Lib/site-packages/pico2d/sdl2/rect.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sprites/grunt2.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sprites/zeroxsheet.gif">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="32" column="39" lean-forward="true" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+            <state relative-caret-position="665">
+              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1540231989240" expanded="true" signature="329:363" ph="..." />
-                <marker date="1540231989240" expanded="true" signature="383:505" ph="..." />
-                <marker date="1540231989240" expanded="true" signature="516:689" ph="..." />
-                <marker date="1540231989240" expanded="true" signature="702:722" ph="..." />
+                <marker date="1540301089462" expanded="true" signature="329:363" ph="..." />
+                <marker date="1540301089462" expanded="true" signature="383:505" ph="..." />
+                <marker date="1540301089462" expanded="true" signature="516:689" ph="..." />
+                <marker date="1540301089462" expanded="true" signature="702:722" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files/Python37/Lib/site-packages/pico2d/pico2d.py">
+        <entry file="file://$PROJECT_DIR$/card_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
+            <state relative-caret-position="323">
+              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              <folding>
+                <marker date="1540225450596" expanded="true" signature="190:257" ph="..." />
+                <marker date="1540225450596" expanded="true" signature="524:624" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,8 +120,8 @@
         <option value="$PROJECT_DIR$/sprites/card/card_class.py" />
         <option value="$PROJECT_DIR$/card_class.py" />
         <option value="$PROJECT_DIR$/title_state.py" />
-        <option value="$PROJECT_DIR$/game_class.py" />
         <option value="$PROJECT_DIR$/main_state.py" />
+        <option value="$PROJECT_DIR$/game_class.py" />
       </list>
     </option>
   </component>
@@ -332,20 +295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/card_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-          <folding>
-            <marker date="1540225450596" expanded="true" signature="190:257" ph="..." />
-            <marker date="1540225450596" expanded="true" signature="524:624" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -361,8 +310,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/title_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+        <state relative-caret-position="1634">
+          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
             <marker date="1540228541736" expanded="true" signature="2399:2663" ph="..." />
@@ -371,24 +320,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_state.py">
+    <entry file="file://C:/Program Files/Python37/Lib/site-packages/pico2d/pico2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="39" lean-forward="true" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <marker date="1540231989240" expanded="true" signature="329:363" ph="..." />
-            <marker date="1540231989240" expanded="true" signature="383:505" ph="..." />
-            <marker date="1540231989240" expanded="true" signature="516:689" ph="..." />
-            <marker date="1540231989240" expanded="true" signature="702:722" ph="..." />
-          </folding>
+        <state relative-caret-position="19">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/zero.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/zeroxsheet.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/grunt2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://C:/Program Files/Python37/Lib/site-packages/pico2d/sdl2/rect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="434">
+          <caret line="48" column="60" lean-forward="true" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -398,27 +349,39 @@
     <entry file="file://$PROJECT_DIR$/sprites/grunt1.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://C:/Program Files/Python37/Lib/site-packages/pico2d/pico2d.py">
+    <entry file="file://$PROJECT_DIR$/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
+        <state relative-caret-position="665">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+            <marker date="1540301089462" expanded="true" signature="329:363" ph="..." />
+            <marker date="1540301089462" expanded="true" signature="383:505" ph="..." />
+            <marker date="1540301089462" expanded="true" signature="516:689" ph="..." />
+            <marker date="1540301089462" expanded="true" signature="702:722" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sprites/zeroxsheet.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sprites/grunt2.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/card_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <marker date="1540225450596" expanded="true" signature="190:257" ph="..." />
+            <marker date="1540225450596" expanded="true" signature="524:624" ph="..." />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="475">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1540231135549" expanded="true" signature="221:230" ph="..." />
-            <marker date="1540231135549" expanded="true" signature="777:810" ph="..." />
+            <marker date="1540301506400" expanded="true" signature="358:367" ph="..." />
+            <marker date="1540301506400" expanded="true" signature="1058:1091" ph="..." />
           </folding>
         </state>
       </provider>

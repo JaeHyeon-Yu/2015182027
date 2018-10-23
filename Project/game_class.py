@@ -7,15 +7,24 @@ class Player:
         self.x, self.y = None, None
         self.frame_x, self.frame_y = None, None
         self.image = None
-    def Initialize(self):
-        self.x, self.y = 100,  400
-        self.image = load_image('sprites/zeroxsheet.gif')
-        self.frame_x, self.frame_y = 0, 350
-    def draw(self):
-        self.image.clip_draw((self.frame_x*54), self.frame_y, 54, 50, self.x, self.y)
-    def update(self):
-        self.frame_x = (self.frame_x+1) % 16
 
+        self.animation = 1
+        self.Idle_animation = [(0, 900), (80, 900)]
+        self.run_animation = None
+        self.frame = 0
+    def Initialize(self):
+        self.x, self.y = 120,  410
+        self.image = load_image('sprites/zero.png')
+    def draw(self):
+        self.image.clip_draw(self.frame_x, self.frame_y, 70, 100, self.x, self.y)
+    def update(self):
+        if self.animation is 1:
+            self.frame_x, self.frame_y = self.Idle_animation[self.frame]
+            self.frame = (self.frame + 1) % 2
+        elif self.animation is 2:
+            pass
+    def handle_events(self):
+        pass
 
 class Monster:
     def __init__(self):
