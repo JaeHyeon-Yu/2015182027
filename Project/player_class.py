@@ -31,55 +31,32 @@ class Player:
             self.bullet.draw()
 
     def update(self):
-        if self.animation is 0: # Idle
-            self.size_x = 75
-            self.frame_x, self.frame_y = self.Idle_animation[self.frame]
-            self.frame = (self.frame + 1) % 2
+        if self.animation is 0:
+            self.Idle_Animation()
 
-        elif self.animation is 1:   # run
-            self.frame_x, self.frame_y = self.run_animation[self.frame]
-            self.frame = (self.frame + 1) % 16
-            self.x += 200//16
-            if self.frame is 15:
-                self.x=300
-                self.frame = 0
-                self.animation = 0
+        elif self.animation is 1:
+            self.Run_Animation()
+
         elif self.animation is 3:
+            pass            # jump
+
+        elif self.animation is 4:
+            pass            # Down
+
+        elif self.animation is 5:
+            self.Attck_Animation()
+
+        elif self.animation is 6:
             pass
+
+        elif self.animation is 7:
+            pass
+
+        elif self.animation is 8:
+            pass
+
         elif self.animation is 9:  # gun
-            if self.frame is 5:
-                self.size_x = 88
-            elif self.frame is 6:
-                self.size_x = 100
-            elif self.frame is 7:
-                self.size_x = 120
-            elif self.frame is 8:
-                self.gun = True
-                self.bullet.Initialize(self.x, self.y)
-            else:
-                self.size_x = 80
-            self.frame_x, self.frame_y = self.gun_animation[self.frame]
-            self.frame = (self.frame +1) % 11
-
-            if self.frame is 10:
-                self.frame = 0
-                self.animation = 0
-
-        elif self.animation is 5:       # attck
-            if self.frame is 3 or self.frame is 4:
-                self.size_x = 160
-            elif self.frame is 5:
-                self.size_x = 140
-            elif self.frame is 6 or self.frame is 7:
-                self.size_x = 105
-            else:
-                self.size_x = 80
-            self.frame_x, self.frame_y = self.attack_animation[self.frame]
-            self.frame = (self.frame+1)% 10
-
-            if self.frame is 9:
-                self.frame = 0
-                self.animation = 0
+            self.Gun_Animation()
 
 
         if self.gun is True:
@@ -89,4 +66,70 @@ class Player:
         pass
     def update_animation(self, num):
         self.animation = num
+        self.size_x = 75
         self.frame = 0
+    def Idle_Animation(self):
+        self.size_x = 75
+        self.frame_x, self.frame_y = self.Idle_animation[self.frame]
+        self.frame = (self.frame + 1) % 2
+    def Run_Animation(self):
+        self.frame_x, self.frame_y = self.run_animation[self.frame]
+        self.frame = (self.frame + 1) % 16
+        self.x += 200 // 16
+        if self.frame is 15:
+            self.x = 300
+            self.frame = 0
+            self.animation = 0
+    # 2
+    # 3
+    # 4
+    def Attck_Animation(self):
+        if self.frame is 3 or self.frame is 4:
+            self.size_x = 160
+        elif self.frame is 5:
+            self.size_x = 140
+        elif self.frame is 6 or self.frame is 7:
+            self.size_x = 105
+        else:
+            self.size_x = 80
+        self.frame_x, self.frame_y = self.attack_animation[self.frame]
+        self.frame = (self.frame + 1) % 10
+
+        if self.frame is 9:
+            self.frame = 0
+            self.animation = 0
+        if self.frame is 3 or self.frame is 4:
+            self.size_x = 160
+        elif self.frame is 5:
+            self.size_x = 140
+        elif self.frame is 6 or self.frame is 7:
+            self.size_x = 105
+        else:
+            self.size_x = 80
+        self.frame_x, self.frame_y = self.attack_animation[self.frame]
+        self.frame = (self.frame+1)% 10
+
+        if self.frame is 9:
+            self.frame = 0
+            self.animation = 0
+    # 7
+    # 8
+    def Gun_Animation(self):
+        if self.frame is 5:
+            self.size_x = 88
+        elif self.frame is 6:
+            self.size_x = 100
+        elif self.frame is 7:
+            self.size_x = 120
+        elif self.frame is 8:
+            self.gun = True
+            self.bullet.Initialize(self.x, self.y)
+        else:
+            self.size_x = 80
+        self.frame_x, self.frame_y = self.gun_animation[self.frame]
+        self.frame = (self.frame + 1) % 11
+
+        if self.frame is 10:
+            self.frame = 0
+            self.animation = 0
+    # 10
