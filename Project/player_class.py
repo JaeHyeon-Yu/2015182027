@@ -1,6 +1,7 @@
 from pico2d import *
 import game_framework
 from bullet_class import *
+from buff_class import *
 
 
 class Player:
@@ -13,16 +14,25 @@ class Player:
 
         self.gun = False
         self.bullet = Bullet()
+        self.buff = Buff()
+        self.buff_on = False
+
 
         self.animation = 0
         self.Idle_animation = [(0, 900), (75, 900)]   # 0
         self.run_animation = [(0, 500), (80, 500), (160, 500), (240, 500), (320, 500), (400, 500), (480, 500), (570, 500), (650, 500), (740, 500), (820, 500), (895, 500), (975, 500), (1055, 500), (1135, 500), (1220, 500)]    # 1
+        self.back_animation = [(0, 900), (75, 900), (150, 900), (230, 900), (300, 900), (230, 900), (150, 900), (75, 900)]
         self.jump_animation = [(0, 760), (70, 745), (202, 740), (270, 740), (202, 740), (70, 745)]  # 3    # 나중에 찾자.....
-        self.gun_animation = [(0, 630), (75, 630), (155, 630), (240, 630), (325, 630), (408, 630), (492, 630), (600, 630), (325, 630), (240, 630), (155, 630)]  # 9
+        self.down_animation = None
         self.attack_animation = [(0, 420), (90, 420), (182, 420), (265, 420), (440, 420), (605, 420), (760, 420), (880, 420), (1000, 420), (90, 420)]  # 5
+        self.defence_animation = [(0, 0), (50, 0), (100, 0)]
+        self.heal_animation = None
+        self.mana_animation = None
+        self.gun_animation = [(0, 630), (75, 630), (155, 630), (240, 630), (325, 630), (408, 630), (492, 630), (600, 630), (325, 630), (240, 630), (155, 630)]  # 9
+        self.fire_animation = None
         self.frame = 0
     def Initialize(self):
-        self.x, self.y = 120,  410
+        self.x, self.y = 520,  410
         self.image = load_image('sprites/zerox.png')
 
     def draw(self):
@@ -30,6 +40,8 @@ class Player:
 
         if self.gun is True:
             self.bullet.draw()
+        elif self.buff_on is True:
+            self.buff.draw()
 
     def update(self):
         if self.animation is 0:
@@ -67,6 +79,8 @@ class Player:
 
         if self.gun is True:
             self.bullet.update()
+        if self.buff_on is True:
+            self.buff.update()
 
     def handle_events(self):
         pass
@@ -87,7 +101,13 @@ class Player:
             self.frame = 0
             self.animation = 0
     def Back_Animation(self):
-        pass #2
+        self.frame_x, self.frame_y = self.back_animation[self.frame]
+        self.frame = (self.frame+1) % 8
+        self.x -= 200 // 8
+        if self.frame is 15:
+            self.x = 300
+            self.frame = 0
+            self.animation = 0          # 미완
 
     def Jump_Animation(self):
         self.frame_x, self.frame_y = self.jump_animation[self.frame]
@@ -97,7 +117,6 @@ class Player:
         if self.frame is 5:
             self.frame = 0
             self.animation = 0
-
     def Down_Animation(self):
         pass #4
     def Attck_Animation(self):
@@ -130,7 +149,11 @@ class Player:
             self.frame = 0
             self.animation = 0
     def Defense_Animation(self):
-        pass #6
+        if self.buff_on is False:
+            self.buff.Initiallize(load_image('sprites/defense.png'), 1, self.x, self.y)
+        self.buff_on = True
+        self.animation = 0
+        self.frame = 0
     def Heal_Animation(self):
         pass #7
     def Mana_Animation(self):
