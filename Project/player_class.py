@@ -26,7 +26,9 @@ class Player:
 
     def draw(self):
         self.image.clip_draw(self.frame_x, self.frame_y, self.size_x, self.size_y, self.x, self.y)
+
         if self.gun is True:
+            print("a")
             self.bullet.draw()
 
     def update(self):
@@ -51,10 +53,18 @@ class Player:
                 self.size_x = 100
             elif self.frame is 7:
                 self.size_x = 120
+            elif self.frame is 9:
+                self.gun = True
+                self.bullet.Initialize(self.x, self.y)
             else:
                 self.size_x = 80
             self.frame_x, self.frame_y = self.gun_animation[self.frame]
             self.frame = (self.frame +1) % 11
+
+            if self.frame is 10:
+                self.frame = 0
+                self.animation = 1
+
         elif self.animation is 5:
             if self.frame is 3 or self.frame is 4:
                 self.size_x = 160
@@ -62,9 +72,6 @@ class Player:
                 self.size_x = 140
             elif self.frame is 6 or self.frame is 7:
                 self.size_x = 105
-            elif self.frame is 9:
-                self.gun = True
-                self.bullet.Initialize(self.x, self.y)
             else:
                 self.size_x = 80
             self.frame_x, self.frame_y = self.attack_animation[self.frame]
@@ -73,6 +80,10 @@ class Player:
             if self.frame is 9:
                 self.frame = 0
                 self.animation = 1
+
+
+        if self.gun is True:
+            self.bullet.update()
 
     def handle_events(self):
         pass

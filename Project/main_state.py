@@ -24,7 +24,9 @@ def handle_events():
         if event.type == SDL_QUIT:
             game_framework.quit()
         elif event.type == SDL_MOUSEBUTTONDOWN:
-            pass
+            x, y = event.x, 600 - 1 - event.y
+            for card in title_state.card_stack:
+                pass
 def draw():
     clear_canvas()
     map.draw()

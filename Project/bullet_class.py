@@ -10,7 +10,7 @@ class Bullet:
         self.image = load_image('sprites/bullet.png')
 
     def update(self):
-        pass
+        self.x += 10
 
     def draw(self):
-        self.image.clip_draw(0, 0, 100, 100, 400, self.y)
+        self.image.draw(self.x , self.y)
