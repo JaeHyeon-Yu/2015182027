@@ -6,7 +6,7 @@ class Bullet:
         self.image = None
 
     def Initialize(self, x, y):
-        self.x, self.y = x + 50, y
+        self.x, self.y = x + 70, y
         self.image = load_image('sprites/bullet.png')
 
     def update(self):

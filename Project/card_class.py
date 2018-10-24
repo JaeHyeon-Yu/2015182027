@@ -5,9 +5,11 @@ class Card:
         self.image = None
         self.tx, self.ty = 0, 0
         self.sx, self.sy = 0,  0
+        self.number = None
 
-    def Initialize(self, image, tx, ty):
+    def Initialize(self, num, image, tx, ty):
         self.image = image
+        self.number = num
         self.tx, self.ty = tx, ty
 
     def draw(self):
@@ -15,7 +17,7 @@ class Card:
 
 
     def Click(self, x, y):
-        if self.tx - 57 <= x and x <= self.tx + 57 and self.ty - 73 <= y and y <= self.ty + 73:
+        if self.tx - 55 <= x and x <= self.tx + 55 and self.ty - 70 <= y and y <= self.ty + 70:
             return True
         else:
             return False
