@@ -11,13 +11,11 @@ class Grass:
 
 
 class Boy:
-    image = None
 
     def __init__(self):
         self.x, self.y = random.randint(100, 700), 90
         self.frame = random.randint(0, 7)
-        if Boy.image == None:
-            Boy.image = load_image('run_animation.png')
+        self.image = load_image('run_animation.png')
 
 
     def update(self):
@@ -25,7 +23,7 @@ class Boy:
         self.x += 5
 
     def draw(self):
-        self.image.clip_draw(self.frame * 1 00, 0, 100, 100, self.x, self.y)
+        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
 
 
 def handle_events():
