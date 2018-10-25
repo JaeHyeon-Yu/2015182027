@@ -120,21 +120,22 @@ class SleepState:
 class DashState:
     @staticmethod
     def enter(boy, event):
-        if event == RIGHT_DOWN:
+        if event is RIGHT_DOWN:
             boy.velocity += 1
-        elif event == LEFT_DOWN:
+        elif event is LEFT_DOWN:
             boy.velocity -= 1
-        elif event == RIGHT_UP:
+        elif event is RIGHT_UP:
             boy.velocity -= 1
-        elif event == LEFT_UP:
+        elif event is LEFT_UP:
             boy.velocity += 1
 
         boy.dir = boy.velocity
-        boy.timer_dash = 222
+        boy.timer_dash = 1000
 
     @staticmethod
     def exit(boy, event):
-        pass
+        if event is LSHIFT_UP or RSHIFT_UP:
+            boy.timer_dash = 0
 
     @staticmethod
     def do(boy):
@@ -143,7 +144,7 @@ class DashState:
         boy.x += boy.velocity*2
         boy.x = clamp(25, boy.x, 1600 - 25)
 
-        if boy.timer_dash is 0:
+        if boy.timer_dash <= 0:
             boy.add_event(SLEEP_TIMER)
 
     @staticmethod
