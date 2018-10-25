@@ -26,10 +26,9 @@ class Player:
         self.down_animation = None
         self.attack_animation = [(0, 420), (90, 420), (182, 420), (265, 420), (440, 420), (605, 420), (760, 420), (880, 420), (1000, 420), (90, 420)]  # 5
         self.defence_animation = [(0, 0), (50, 0), (100, 0)]
-        self.heal_animation = None
-        self.mana_animation = None
+
         self.gun_animation = [(0, 630), (75, 630), (155, 630), (240, 630), (325, 630), (408, 630), (492, 630), (600, 630), (325, 630), (240, 630), (155, 630)]  # 9
-        self.fire_animation = None
+        self.fire_animation = [(5, 1260), (117 ,1250), (270 ,1250), (410, 1250), (550, 1250), (685, 1265), (835, 1265), (980, 1265), (1130, 1265), (1260, 1265), (0, 1025)]
         self.frame = 0
     def Initialize(self):
         self.x, self.y = 520,  410
@@ -117,8 +116,10 @@ class Player:
         if self.frame is 5:
             self.frame = 0
             self.animation = 0
+
     def Down_Animation(self):
         pass #4
+
     def Attck_Animation(self):
         if self.frame is 3 or self.frame is 4:
             self.size_x = 160
@@ -148,6 +149,7 @@ class Player:
         if self.frame is 9:
             self.frame = 0
             self.animation = 0
+
     def Defense_Animation(self):
         if self.buff_on is False:
             self.buff.Initiallize(load_image('sprites/defense.png'), 1, self.x, self.y)
@@ -177,4 +179,37 @@ class Player:
             self.frame = 0
             self.animation = 0
     def Fire_Animation(self):
-        pass #10
+        if self.frame is 0:
+            self.size_x = 120
+            self.size_y = 120
+        elif self.frame is 1:
+            self.size_x = 150
+            self.size_y = 140
+        elif self.frame is 2:
+            self.size_x = 140
+            self.size_y = 140
+        elif self.frame is 3 or self.frame is 4:
+            self.size_x = 140
+            self.size_y = 150
+        elif self.frame is 5 or self.frame is 6:
+            self.size_x = 150
+            self.size_y = 160
+        elif self.frame is 7 or self.frame is 9:
+            self.size_x = 150
+            self.size_y = 180
+        elif self.frame is 8 or self.frame is 10:
+            self.size_x = 140
+            self.size_y = 180
+        else:
+            self.size_x = 100
+            self.size_y = 100
+
+        self.frame_x, self.frame_y = self.fire_animation[self.frame]
+        self.frame = (self.frame+1)%11
+
+        if self.frame is 10:
+            self.animation = 0
+            self.frame = 0
+            self.size_x = 75
+            self.size_y = 100
+
