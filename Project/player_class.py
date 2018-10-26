@@ -2,6 +2,7 @@ from pico2d import *
 import game_framework
 from bullet_class import *
 from buff_class import *
+import game_world
 
 
 class Player:
@@ -31,7 +32,7 @@ class Player:
         self.fire_animation = [(5, 1260), (117 ,1250), (270 ,1250), (410, 1250), (550, 1250), (685, 1265), (835, 1265), (980, 1265), (1130, 1265), (1260, 1265), (0, 1025)]
         self.frame = 0
     def Initialize(self):
-        self.x, self.y = 520,  410
+        self.x, self.y = 100,  410
         self.image = load_image('sprites/zerox.png')
 
     def draw(self):
@@ -170,6 +171,7 @@ class Player:
         elif self.frame is 8:
             self.gun = True
             self.bullet.Initialize(self.x, self.y)
+            game_world.add_object(self.bullet, 1)
         else:
             self.size_x = 80
         self.frame_x, self.frame_y = self.gun_animation[self.frame]

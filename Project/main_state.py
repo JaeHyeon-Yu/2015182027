@@ -28,6 +28,7 @@ def handle_events():
             for card in title_state.card_stack:
                 if card.Click(x, y) is True:
                     hero.update_animation(card.number)
+                    card.delete()
 def draw():
     clear_canvas()
     map.draw()

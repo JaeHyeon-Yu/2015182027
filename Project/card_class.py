@@ -6,14 +6,17 @@ class Card:
         self.tx, self.ty = 0, 0
         self.sx, self.sy = 0,  0
         self.number = None
+        self.use = None
 
     def Initialize(self, num, image, tx, ty):
         self.image = image
         self.number = num
         self.tx, self.ty = tx, ty
+        self.use = False
 
     def draw(self):
-        self.image.draw(self.tx, self.ty)
+        if self.use is False:
+            self.image.draw(self.tx, self.ty)
 
 
     def Click(self, x, y):
@@ -29,5 +32,4 @@ class Card:
             return False
 
     def delete(self):
-        self.image = None
-        pass
+        self.use = True
