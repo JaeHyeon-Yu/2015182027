@@ -13,6 +13,8 @@ class Player:
         self.image = None
         self.before = None
 
+        self.hp, self.mp = 10, 10
+
         self.gun = False
         self.bullet = Bullet()
         self.buff = Buff()
