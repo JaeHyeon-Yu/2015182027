@@ -4,6 +4,7 @@ from ball import Ball
 
 import random
 import game_world
+import math
 
 # Boy Run Speed
 # fill expressions correctly
@@ -19,8 +20,8 @@ TIME_PER_ACTION = 0.5
 ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
 
-
-
+PI = 3.141592
+degree = -90
 # Boy Event
 RIGHT_DOWN, LEFT_DOWN, RIGHT_UP, LEFT_UP, SLEEP_TIMER, SPACE = range(6)
 
@@ -104,11 +105,13 @@ class RunState:
 
 class SleepState:
     sleep_x, sleep_y = None, None
+
     @staticmethod
     def enter(boy, event):
         global sleep_x, sleep_y
         boy.frame = 0
         sleep_x, sleep_y = boy.x, boy.y
+        boy.ghost_frame = random.randint(0, 8)
 
     @staticmethod
     def exit(boy, event):
@@ -116,7 +119,15 @@ class SleepState:
 
     @staticmethod
     def do(boy):
+        global PI, degree
+        global sleep_x, sleep_y
+
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
+        boy.ghost_frame = (boy.ghost_frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
+
+        boy.x = math.cos(degree*3.141592/180.0)*100 + sleep_x
+        boy.y = math.sin(degree*3.141592/180.0)*100 + sleep_y*2
+        degree += 360*2*game_framework.frame_time
 
     @staticmethod
     def draw(boy):
@@ -128,9 +139,9 @@ class SleepState:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', sleep_x - 25, sleep_y - 25, 100, 100)
 
         boy.image.opacify(random.random())
-        boy.image.clip_draw(int(boy.frame) * 100, 300, 100, 100, boy.x, boy.y)
+        boy.image.clip_draw(int(boy.ghost_frame) * 100, 300, 100, 100, boy.x, boy.y)
 
-        
+
 
 next_state_table = {
     IdleState: {RIGHT_UP: RunState, LEFT_UP: RunState, RIGHT_DOWN: RunState, LEFT_DOWN: RunState, SLEEP_TIMER: SleepState, SPACE: IdleState},
@@ -153,6 +164,7 @@ class Boy:
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
 
+        self.ghost_frame = 0
 
     def fire_ball(self):
         ball = Ball(self.x, self.y, self.dir*3)
