@@ -2,6 +2,7 @@ import game_framework
 from pico2d import *
 from ball import Ball
 
+import random
 import game_world
 
 # Boy Run Speed
@@ -102,11 +103,12 @@ class RunState:
 
 
 class SleepState:
-
+    sleep_x, sleep_y = None, None
     @staticmethod
     def enter(boy, event):
-        boy.cur_state = GhostState
+        global sleep_x, sleep_y
         boy.frame = 0
+        sleep_x, sleep_y = boy.x, boy.y
 
     @staticmethod
     def exit(boy, event):
@@ -118,32 +120,17 @@ class SleepState:
 
     @staticmethod
     def draw(boy):
+        global sleep_x, sleep_y
+        boy.image.opacify(1)
         if boy.dir == 1:
-            boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2, '', boy.x - 25, boy.y - 25, 100, 100)
+            boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2, '', sleep_x - 25, sleep_y - 25, 100, 100)
         else:
-            boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
+            boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', sleep_x - 25, sleep_y - 25, 100, 100)
 
-class GhostState:
-    @staticmethod
-    def enter(boy, event):
-        pass
+        boy.image.opacify(random.random())
+        boy.image.clip_draw(int(boy.frame) * 100, 300, 100, 100, boy.x, boy.y)
 
-    @staticmethod
-    def exit(boy, event):
-        pass
-
-    @staticmethod
-    def do(boy):
-        pass
-
-    @staticmethod
-    def draw(boy):
-        pass
-
-# 각속도
-
-
-
+        
 
 next_state_table = {
     IdleState: {RIGHT_UP: RunState, LEFT_UP: RunState, RIGHT_DOWN: RunState, LEFT_DOWN: RunState, SLEEP_TIMER: SleepState, SPACE: IdleState},
@@ -192,4 +179,3 @@ class Boy:
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
-
