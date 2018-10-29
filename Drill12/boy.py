@@ -57,7 +57,7 @@ class IdleState:
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
 
-        if game_framework.time.time() - boy.timer >= 10:
+        if int(game_framework.time.time()) - int(boy.timer) == 10:
             boy.add_event(SLEEP_TIMER)
 
     @staticmethod
@@ -105,6 +105,7 @@ class SleepState:
 
     @staticmethod
     def enter(boy, event):
+        boy.cur_state = GhostState
         boy.frame = 0
 
     @staticmethod
@@ -123,7 +124,21 @@ class SleepState:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
 
 class GhostState:
-    pass
+    @staticmethod
+    def enter(boy, event):
+        pass
+
+    @staticmethod
+    def exit(boy, event):
+        pass
+
+    @staticmethod
+    def do(boy):
+        pass
+
+    @staticmethod
+    def draw(boy):
+        pass
 
 # 각속도
 
