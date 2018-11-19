@@ -72,7 +72,8 @@ class WalkingState:
         boy.y += boy.y_velocity * game_framework.frame_time
 
         if (boy.y >= 5 * boy.x + 50) or boy.y >= 1060 or boy.y <= 70 or boy.y >= int(-5.5*boy.x+10000):
-            pass
+            boy.x -= boy.x_velocity * game_framework.frame_time
+            boy.y -= boy.y_velocity * game_framework.frame_time
 
         boy.x = clamp(0, boy.x, boy.bg.w)
         boy.y = clamp(0, boy.y, boy.bg.h)
