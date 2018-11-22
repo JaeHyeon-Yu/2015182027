@@ -120,6 +120,13 @@ class Boy:
         self.event_que = []
         self.cur_state = WalkingState
         self.cur_state.enter(self, None)
+        self.my_ball = 0
+
+        self.eat_sound = load_wav('pickup.wav')
+        self.eat_sound.set_volume(32)
+
+    def eat(self, ball):
+        self.eat_sound.play()
 
     def get_bb(self):
         return self.x - 50, self.y - 50, self.x + 50, self.y + 50
