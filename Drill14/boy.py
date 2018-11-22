@@ -126,6 +126,7 @@ class Boy:
         self.eat_sound.set_volume(32)
 
     def eat(self, ball):
+        self.my_ball += 1
         self.eat_sound.play()
 
     def get_bb(self):
@@ -151,6 +152,8 @@ class Boy:
     def draw(self):
         self.cur_state.draw(self)
         self.font.draw(self.x - self.bg.window_left -50, self.y - self.bg.window_bottom + 50, '(%5d, %5d)' % (self.x, self.y), (255, 255, 0))
+        self.font.draw(self.x - self.bg.window_left - 50, self.y - self.bg.window_bottom + 100,
+                       '(%5d)' % (self.my_ball), (255, 255, 0))
 
     def handle_event(self, event):
         if (event.type, event.key) in key_event_table:
